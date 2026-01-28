@@ -14,7 +14,7 @@
 		4402801F2F29F5FF0094378D /* Exceptions for "TestIOS" folder in "TestIOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Application/SupportFiles/Info.plist,
 			);
 			target = 4402800C2F29F5FD0094378D /* TestIOS */;
 		};
@@ -147,7 +147,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84N4PJWN7L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestIOS/Info.plist;
+				INFOPLIST_FILE = TestIOS/Application/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -183,7 +183,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 84N4PJWN7L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestIOS/Info.plist;
+				INFOPLIST_FILE = TestIOS/Application/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

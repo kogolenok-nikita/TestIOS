@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  TestIOS
 //
 //  Created by Никита Коголенок on 28.01.26.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     // MARK: - Variable
     // MARK: - GUI Variable
@@ -20,5 +20,4 @@ class ViewController: UIViewController {
     // MARK: - Methods
     
     // MARK: - Actions
-    
 }
