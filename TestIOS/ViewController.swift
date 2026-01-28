@@ -8,12 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Variable
+    // MARK: - GUI Variable
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
     }
-
-
+    // MARK: - Methods
+    
+    // MARK: - Actions
+    
 }
-
