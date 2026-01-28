@@ -20,7 +20,8 @@ final class Builder: BuilderProtocol {
     }
     
     func createMainScreen(router: RouterProtocol) -> UIViewController {
-        let view = MainViewController()
+        let presenter = MainPresenter(router: router)
+        let view = MainViewController(presenter: presenter)
         return view
     }
 }

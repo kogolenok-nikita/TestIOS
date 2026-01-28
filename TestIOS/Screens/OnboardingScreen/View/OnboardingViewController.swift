@@ -83,7 +83,6 @@ final class OnboardingViewController: UIViewController {
             pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             pageControl.heightAnchor.constraint(equalToConstant: 10),
             
-            continueButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             continueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             continueButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
