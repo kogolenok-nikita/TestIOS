@@ -31,7 +31,6 @@ final class OnboardingCell: UICollectionViewCell {
     private let titleLable: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Title"
         label.textColor = .red
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textAlignment = .center
@@ -42,7 +41,6 @@ final class OnboardingCell: UICollectionViewCell {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"
         label.textColor = .red
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textAlignment = .center
@@ -73,8 +71,8 @@ final class OnboardingCell: UICollectionViewCell {
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
+            imageView.topAnchor.constraint(equalTo: containerView.topAnchor),
             imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -50),
             imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.6),
             imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.6),
             

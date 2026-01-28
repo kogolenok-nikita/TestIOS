@@ -12,3 +12,11 @@ struct OnboardingSlide {
     let title: String
     let description: String
 }
+
+extension OnboardingSlide {
+    static let slides: [OnboardingSlide] = [
+        OnboardingSlide(imageName: "img1", title: "Title1", description: "Description1 descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"),
+        OnboardingSlide(imageName: "img2", title: "Title2", description: "Description2 descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"),
+        OnboardingSlide(imageName: "img3", title: "Title3", description: "Description3 descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"),
+    ]
+}

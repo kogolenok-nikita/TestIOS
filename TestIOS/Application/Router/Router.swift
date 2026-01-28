@@ -18,7 +18,7 @@ protocol RouterProtocol {
 
 final class Router: RouterProtocol {
     let navigationController: UINavigationController
-    var builder: BuilderProtocol
+    let builder: BuilderProtocol
     weak var window: UIWindow?
     
     init(navigationController: UINavigationController, builder: BuilderProtocol, window: UIWindow?) {
