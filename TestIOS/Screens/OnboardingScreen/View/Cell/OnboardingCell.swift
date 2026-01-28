@@ -22,7 +22,7 @@ final class OnboardingCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(systemName: "clock")
+        image.image = .img1
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         return image
@@ -86,5 +86,11 @@ final class OnboardingCell: UICollectionViewCell {
             titleLable.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
             titleLable.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
         ])
+    }
+    
+    func configure(with slide: OnboardingSlide) {
+        imageView.image = UIImage(named: slide.imageName)
+        titleLable.text = slide.title
+        descriptionLabel.text = slide.description
     }
 }
