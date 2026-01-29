@@ -10,7 +10,7 @@ import UIKit
 protocol OnboardingViewProtocol: AnyObject {
     func updateCurrentPage(_ currentPage: Int)
     func scrollToPage(_ page: Int)
-    func updateContinueButton(for page: Int)
+    func updateContinueButton(title: String)
 }
 
 final class OnboardingViewController: UIViewController {
@@ -107,12 +107,8 @@ extension OnboardingViewController: OnboardingViewProtocol {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
-    func updateContinueButton(for page: Int) {
-        if page == presenter.slidesCount - 1 {
-            continueButton.setTitle("Начать работу", for: .normal)
-        } else {
-            continueButton.setTitle("Далее", for: .normal)
-        }
+    func updateContinueButton(title: String) {
+        continueButton.setTitle(title, for: .normal)
     }
 }
 

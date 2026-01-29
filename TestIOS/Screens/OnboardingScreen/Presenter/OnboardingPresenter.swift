@@ -13,18 +13,26 @@ protocol OnboardingPresenterProtocol {
     func viewDidLoad()
     func didSelectPage(_ index: Int)
     func continueButtonTapped()
+    var continueButtonTitle: String { get }
 }
 
 final class OnboardingPresenter: OnboardingPresenterProtocol {
     private weak var view: OnboardingViewProtocol?
     private let router: RouterProtocol
+    private let userDefaultsService: OnboardingUserDefaultsServiceProtocol
     private let slides = OnboardingSlide.slides
     private var currentPage = 0
     
     var slidesCount: Int { slides.count }
     
-    init(router: RouterProtocol) {
+    var continueButtonTitle: String {
+        return currentPage == slides.count - 1 ? "Начать работу" : "Далее"
+    }
+    
+    init(router: RouterProtocol, userDefaultsService: OnboardingUserDefaultsServiceProtocol) {
         self.router = router
+        self.userDefaultsService = userDefaultsService
+        self.currentPage = userDefaultsService.getCurrentSlide()
     }
     
     func attachView(_ view: any OnboardingViewProtocol) {
@@ -34,7 +42,8 @@ final class OnboardingPresenter: OnboardingPresenterProtocol {
     func viewDidLoad() {
         updateUI()
         view?.updateCurrentPage(0)
-        view?.updateContinueButton(for: 0)
+        view?.updateContinueButton(title: continueButtonTitle)
+        saveCurrentPage()
     }
     
     func didSelectPage(_ index: Int) {
@@ -47,14 +56,20 @@ final class OnboardingPresenter: OnboardingPresenterProtocol {
             currentPage += 1
             view?.updateCurrentPage(currentPage)
             view?.scrollToPage(currentPage)
-            view?.updateContinueButton(for: currentPage)
+            view?.updateContinueButton(title: continueButtonTitle)
+            saveCurrentPage()
         } else {
+            userDefaultsService.setOnboardingCompleted(true)
             router.showMainScreen()
         }
     }
     
     private func updateUI() {
         view?.updateCurrentPage(currentPage)
-        view?.updateContinueButton(for: currentPage)
+        view?.updateContinueButton(title: continueButtonTitle)
+    }
+    
+    private func saveCurrentPage() {
+        userDefaultsService.setCurrentSlide(currentPage)
     }
 }

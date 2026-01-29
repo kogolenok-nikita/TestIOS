@@ -18,7 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         let builder = Builder()
         let router = Router(navigationController: navigationController, builder: builder, window: window)
-        router.showOnboardingScreen()
+        
+        let onboardingService = OnboardingUserDefaultsService()
+        if onboardingService.isOnboardingCompleted() {
+            router.showMainScreen()
+        } else {
+            router.showOnboardingScreen()
+        }
+        
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
     }

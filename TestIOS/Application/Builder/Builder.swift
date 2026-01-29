@@ -14,7 +14,8 @@ protocol BuilderProtocol {
 
 final class Builder: BuilderProtocol {
     func createOnboardingScreen(router: RouterProtocol) -> UIViewController {
-        let presenter = OnboardingPresenter(router: router)
+        let userDefaultsService = OnboardingUserDefaultsService()
+        let presenter = OnboardingPresenter(router: router, userDefaultsService: userDefaultsService)
         let view = OnboardingViewController(presenter: presenter)
         return view
     }
